@@ -20,8 +20,9 @@ namespace ConsoleApp1
             
             Kasutada tuleb objektorienteeritust - pärilikkus, kapseldamine, polümorfism.
             */
+            Console.WriteLine("Mis teie amet on?\n1) Nooremarendaja\n2) Vanemarendaja\n3) Koristaja\n4) Spetsiaalkoristaja\n5) Ülemused\n6) Andmetöötleja");
 
-            new Nooremarendaja().Amet();
+            //new Nooremarendaja().Amet();
         }
     }
 }

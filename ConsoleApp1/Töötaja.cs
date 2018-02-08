@@ -17,7 +17,33 @@ namespace ConsoleApp1
 
         public void Amet()
         {
-            Console.WriteLine("Teie amet on " + Name);
+            Console.WriteLine("Teie amet on: " + Name.ToLower() + "\nTeil on ligipääs järgmistele ruumidele:");
+            int i = 0;
+            if (PeauksAccess == true)
+            {
+                i++;
+                Console.WriteLine(i + ") Peauksele");
+            }
+            if (ArendajateRuumAccess == true)
+            {
+                i++;
+                Console.WriteLine(i + ") Arendajate ruumile");
+            }
+            if (ÜlemusteRuumAccess == true)
+            {
+                i++;
+                Console.WriteLine(i + ") Ülemuste ruumile");
+            }
+            if (KöökAccess == true)
+            {
+                i++;
+                Console.WriteLine(i + ") Köögile");
+            }
+            if (AndmetöötlejateRuumAccess == true)
+            {
+                i++;
+                Console.WriteLine(i + ") Andmetöötlejate ruumile");
+            }
         }
     }
 
@@ -26,11 +52,7 @@ namespace ConsoleApp1
         public Nooremarendaja()
         {
             Name = "Nooremarendaja";
-        }
-
-        public void Amet()
-        {
-            base.Amet();
+            ArendajateRuumAccess = true;
         }
     }
 
@@ -39,6 +61,9 @@ namespace ConsoleApp1
         public Vanemarendaja()
         {
             Name = "Vanemarendaja";
+            ArendajateRuumAccess = true;
+            ÜlemusteRuumAccess = true;
+            AndmetöötlejateRuumAccess = true;
         }
     }
 
@@ -47,6 +72,9 @@ namespace ConsoleApp1
         public Koristaja()
         {
             Name = "Koristaja";
+            ArendajateRuumAccess = true;
+            ÜlemusteRuumAccess = true;
+            AndmetöötlejateRuumAccess = true;
         }
     }
 
@@ -55,6 +83,8 @@ namespace ConsoleApp1
         public Spetsiaalkoristaja()
         {
             Name = "Spetsiaalkoristaja";
+            ArendajateRuumAccess = true;
+            AndmetöötlejateRuumAccess = true;
         }
     }
 
@@ -63,6 +93,9 @@ namespace ConsoleApp1
         public Ülemused()
         {
             Name = "Ülemused";
+            ArendajateRuumAccess = true;
+            ÜlemusteRuumAccess = true;
+            AndmetöötlejateRuumAccess = true;
         }
     }
 
@@ -71,6 +104,7 @@ namespace ConsoleApp1
         public Andmetöötleja()
         {
             Name = "Andmetöötleja";
+            AndmetöötlejateRuumAccess = true;
         }
     }
 }
