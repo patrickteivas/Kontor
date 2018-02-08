@@ -17,7 +17,8 @@ namespace ConsoleApp1
 
         public void Amet()
         {
-            Console.WriteLine("Teie amet on: " + Name.ToLower() + "\nTeil on ligipääs järgmistele ruumidele:");
+            Console.Clear();
+            Console.WriteLine("Teie amet on: " + Name.ToLower() + "\n\nTeil on ligipääs järgmistele ruumidele:");
             int i = 0;
             if (PeauksAccess == true)
             {

@@ -20,9 +20,36 @@ namespace ConsoleApp1
             
             Kasutada tuleb objektorienteeritust - pärilikkus, kapseldamine, polümorfism.
             */
-            Console.WriteLine("Mis teie amet on?\n1) Nooremarendaja\n2) Vanemarendaja\n3) Koristaja\n4) Spetsiaalkoristaja\n5) Ülemused\n6) Andmetöötleja");
+            bool State = false;
+            int Valik = 0;
+            while (State == false)
+            {
+                Console.WriteLine("Mis on teie amet?\n1) Nooremarendaja\n2) Vanemarendaja\n3) Koristaja\n4) Spetsiaalkoristaja\n5) Ülemused\n6) Andmetöötleja");
+                State = true;
+                var RawInput = Console.ReadLine();
+                State = Int32.TryParse(RawInput, out Valik);
+                if (State == true)
+                {
+                    if (Valik <= 0 | Valik >= 7)
+                    {
+                        State = false;
+                        Console.Clear();
+                        Console.WriteLine("Vale valik! Proovige uuesti.\n");
+                    }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Vale valik! Proovige uuesti.\n");
+                }
+            }
 
-            //new Nooremarendaja().Amet();
+            if (Valik == 1) new Nooremarendaja().Amet();
+            else if (Valik == 2) new Vanemarendaja().Amet();
+            else if (Valik == 3) new Koristaja().Amet();
+            else if (Valik == 4) new Spetsiaalkoristaja().Amet();
+            else if (Valik == 5) new Ülemused().Amet();
+            else if (Valik == 6) new Andmetöötleja().Amet();
         }
     }
 }
